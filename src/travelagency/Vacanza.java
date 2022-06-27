@@ -31,9 +31,10 @@ public class Vacanza {
 	public Vacanza (String destination,LocalDate startingDate,LocalDate endingDate) throws Exception{
 		if ((startingDate == null) || (endingDate == null) || (destination == null)) {
 			throw new Exception ("Non sono state inserite tutte le informazioni");
-	    }else if (startingDate.isBefore(today)||(endingDate.isBefore(startingDate))) {
+		}
+	    if (startingDate.isBefore(today)||(endingDate.isBefore(startingDate))) {
 	    	throw new Exception ("Date inserite non valide");
-	    }else {
+	    }
 	    	this.destination = destination;
 	    	this.startingDate = startingDate;
 	    	this.endingDate = endingDate;
@@ -41,5 +42,4 @@ public class Vacanza {
 		//piccola pausa 
 	}
 	
-}
 
